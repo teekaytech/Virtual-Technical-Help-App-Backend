@@ -27,7 +27,7 @@ class Api::V1::UsersController < ApplicationController
     if session_user
       render json: { logged_in: true, user: session_user }
     else
-      render json: { message: 'No user is currently logged in' }, status: :no_content
+      render json: { message: 'No user is currently logged in' }
     end
   end
 

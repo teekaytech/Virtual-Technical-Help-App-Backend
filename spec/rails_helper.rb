@@ -3,6 +3,7 @@ require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 
 require File.expand_path('../config/environment', __dir__)
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 # require database cleaner at the top level
 require 'database_cleaner'
@@ -82,7 +83,7 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
-
+  config.include RequestSpecHelper, type: :request
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
