@@ -1,24 +1,2 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Virtual Technical Help Application (Backend)
+This is a Rails API App for Virtual Technical Help project. It provides user authentication with JWT, allows authorized users to book appointment for one on one meeting with a Technical Engineer.
