@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
-  has_many :appointments, dependent: :destroy
+  has_many :appointments
+  has_many :engineers, through: :appointments
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :name, presence: true, length: { minimum: 5 }

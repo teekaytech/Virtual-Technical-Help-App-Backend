@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.create(
+  name: 'John Doe',
+  username: 'johndoe',
+  email: 'john@doe.com',
+  password: 'password',
+  password_confirmation: 'password'
+)
+
+Engineer.create(
+  name: 'Foo Bar',
+  stack: 'MERN',
+  location: 'Ontario',
+  avatar_link: 'https://robohash.org/sitsequiquia.png?size=300x300&set=set1'
+)

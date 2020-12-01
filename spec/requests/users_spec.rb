@@ -9,7 +9,6 @@ RSpec.describe 'Users API', type: :request do
   # rubocop:enable Style/BlockDelimiters
   before { post '/api/v1/users', params: valid_attributes }
 
-  # Test suite for POST /users
   describe 'POST /users' do
     context 'when the request is valid' do
       it 'creates a user' do

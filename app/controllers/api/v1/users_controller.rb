@@ -24,8 +24,8 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def auto_login
-    if session_user
-      render json: { logged_in: true, user: session_user }
+    if logged_in_user
+      render json: { logged_in: true, user: logged_in_user }
     else
       render json: { message: 'No user is currently logged in' }
     end
