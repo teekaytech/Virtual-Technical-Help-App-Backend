@@ -14,9 +14,11 @@ User.create(
   password_confirmation: 'password'
 )
 
-Engineer.create(
-  name: 'Foo Bar',
-  stack: 'MERN',
-  location: 'Ontario',
-  avatar_link: 'https://robohash.org/sitsequiquia.png?size=300x300&set=set1'
-)
+10.times do
+  Engineer.create(
+    name: Faker::Name.unique.name,
+    stack: %i[MEAN LAMP FULL-STACK DJANGO BITNAMI-DEVPACK LAPP XAMPP MAMP].sample,
+    location: Faker::Address.country,
+    avatar_link: Faker::Avatar.image
+  )
+end

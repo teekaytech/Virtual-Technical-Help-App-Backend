@@ -23,6 +23,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
+gem 'faker'
 gem 'rack-cors'
 
 gem 'jwt'
@@ -37,7 +38,6 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'factory_bot_rails', '~> 4.0'
-  gem 'faker'
   gem 'shoulda-matchers', '~> 3.1'
 end
 
