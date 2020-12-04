@@ -1,15 +1,18 @@
 class Api::V1::AppointmentsController < ApplicationController
-  skip_before_action :authorized
   before_action :set_appointment, only: %i[show update destroy]
 
   def index
-    @appointments = Appointment.all
-    json_response(@appointments)
+    @appointments = logged_in_user.appointments
+    return json_response(@appointments) if @appointments
+
+    error_message
   end
 
   def create
-    @appointment = Appointment.create!(appointment_params)
-    json_response(@appointment, :created)
+    @appointment = logged_in_user.appointments.create(appointment_params)
+    return json_response(@appointment, :created) if @appointment.valid?
+
+    error_message
   end
 
   def show
@@ -33,6 +36,10 @@ class Api::V1::AppointmentsController < ApplicationController
   end
 
   def set_appointment
-    @appointment = Appointment.find(params[:id])
+    @appointment = logged_in_user.appointments.find(params[:id])
+  end
+
+  def error_message
+    render json: { error: 'You have to login.', status: 'NOT_LOGGED_IN' }
   end
 end

@@ -5,7 +5,7 @@ class Api::V1::UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.valid?
       token = encode_token({ user_id: @user.id })
-      render json: { user: @user, token: token, created: true }, status: :created
+      render json: { user: trim_user(@user), token: token, created: true }, status: :created
     else
       render json: { created: false, error_messages: @user.errors.full_messages }
     end
@@ -17,7 +17,7 @@ class Api::V1::UsersController < ApplicationController
     check_auth = @user.authenticate(params[:password])
     if @user && check_auth
       token = encode_token({ user_id: @user.id })
-      render json: { user: @user, token: token, logged_in: true }, status: :ok
+      render json: { user: trim_user(@user), token: token, logged_in: true }, status: :ok
     else
       render json: { error: 'Invalid username or password', status: 'NOT_LOGGED_IN' }
     end
@@ -40,5 +40,9 @@ class Api::V1::UsersController < ApplicationController
 
   def user_params
     params.permit(:name, :username, :email, :password, :password_confirmation)
+  end
+
+  def trim_user(user)
+    { id: user.id, name: user.name, username: user.username, email: user.email }
   end
 end
