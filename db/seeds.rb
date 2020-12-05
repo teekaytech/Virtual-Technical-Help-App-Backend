@@ -14,11 +14,11 @@ User.create(
   password_confirmation: 'password'
 )
 
-10.times do
+10.times do |c|
   Engineer.create(
     name: Faker::Name.unique.name,
     stack: %i[MEAN LAMP FULL-STACK DJANGO BITNAMI-DEVPACK LAPP XAMPP MAMP].sample,
     location: Faker::Address.country,
-    avatar_link: Faker::Avatar.image
+    avatar_link: "https://res.cloudinary.com/teekaytech/image/upload/v1607173166/engineers/#{c + 1}.jpg"
   )
 end

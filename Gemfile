@@ -29,6 +29,9 @@ gem 'rack-cors'
 gem 'jwt'
 gem 'rubocop', '~>0.81.0'
 
+# gem 'carrierwave'
+# gem 'cloudinary'
+
 group :development, :test do
   gem 'dotenv-rails', require: 'dotenv/rails-now'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

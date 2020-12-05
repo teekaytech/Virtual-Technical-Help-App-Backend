@@ -1,0 +1,9 @@
+development:
+  cloud_name: "teekaytech"
+  api_key: "98785549878945"
+  api_secret: "3s258d44f1s2a22g22d23a3s3d22a3d2"
+
+production:
+  cloud_name: "teekaytech"
+  api_key: "98785549878945"
+  api_secret: "3s258d44f1s2a22g22d23a3s3d22a3d2"
