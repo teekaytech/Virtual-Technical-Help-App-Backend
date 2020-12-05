@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :appointments
+      resources :appointments, only: %i[create index]
       resources :engineers
       resources :users, only: [:create]
       post '/login', to: 'users#login'
