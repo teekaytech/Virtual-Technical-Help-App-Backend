@@ -5,7 +5,7 @@ class ApplicationController < ActionController::API
   include ExceptionHandler
 
   def encode_token(payload)
-    JWT.encode(payload, 's3cr3t')
+    JWT.encode(payload, ENV['JWT_TOKEN'])
   end
 
   def auth_header
@@ -17,7 +17,7 @@ class ApplicationController < ActionController::API
 
     token = auth_header.split(' ')[1]
     begin
-      JWT.decode(token, 's3cr3t', true, algorithm: 'HS256')
+      JWT.decode(token, ENV['JWT_TOKEN'], true, algorithm: 'HS256')
     rescue JWT::DecodeError
       false
     end
