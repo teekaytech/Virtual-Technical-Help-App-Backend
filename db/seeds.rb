@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.create(
+  name: 'John Doe',
+  username: 'johndoe',
+  email: 'john@doe.com',
+  password: 'password',
+  password_confirmation: 'password'
+)
+
+10.times do |c|
+  Engineer.create(
+    name: Faker::Name.unique.name,
+    stack: %i[MEAN LAMP FULL-STACK DJANGO BITNAMI-DEVPACK LAPP XAMPP MAMP].sample,
+    location: Faker::Address.country,
+    avatar_link: "https://res.cloudinary.com/teekaytech/image/upload/v1607173166/engineers/#{c + 1}.jpg"
+  )
+end
