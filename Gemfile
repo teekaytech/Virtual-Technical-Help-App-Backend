@@ -43,6 +43,9 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_bot_rails', '~> 4.0'
   gem 'shoulda-matchers', '~> 3.1'
+
+  # https://github.com/simplecov-ruby/simplecov
+  gem 'simplecov', require: false
 end
 
 group :development do
