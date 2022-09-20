@@ -221,7 +221,7 @@ DEPENDENCIES
   faker
   jwt
   listen (~> 3.2)
-  pg (>= 0.18, < 2.0)
+  pg (~> 1.4, >= 1.4.3)
   puma (~> 4.1)
   rack-cors
   rails (~> 6.0.3, >= 6.0.3.4)
@@ -231,7 +231,6 @@ DEPENDENCIES
   simplecov
   spring
   spring-watcher-listen (~> 2.0.0)
-  tzinfo-data
 
 RUBY VERSION
    ruby 2.7.1p83
