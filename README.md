@@ -49,6 +49,11 @@ _After cloning, the following steps setup the project_
 - `bundle install` to install all necessary dependencies.
 - `rails db:create` && `rails db:migrate` to create database and tables.
 - `rails db:seed` to populate database with Dummie data.
+- `touch .env` to create an env file. This requires two(2) keys namely: `JWT_TOKEN` & `SECRET_KEY_BASE`. `JWT_TOKEN` can be set to whatever you desire, while `SECRET_KEY_BASE` value can be generated with: `rake secret`.
+  ```
+  JWT_TOKEN=<<whatever>>
+  SECRET_KEY_BASE=<<code generated from 'rake secret' command>>
+  ```
 - `rails s` to start the application. You're all set.
   Feel free to use POSTMAN or any other similar infrastructure to test the different endpoints.
 
@@ -65,7 +70,7 @@ _After cloning, the following steps setup the project_
 | ------------ | ------------| ---------- |
 | POST /users | Registers a new user | False |
 | POST /login | Logs in a user | False |
-| GET /autologin | Checks login status of the current user | True |
+| GET /auto_login | Checks login status of the current user | True |
 | POST /appointments | Creates a new appointment | True |
 | GET /appointments | Fetches all available appointment for logged user | True |
 | GET /engineers | Fetches all available engineers | False |
