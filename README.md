@@ -5,7 +5,7 @@
 ## Built With
 
 - Ruby v2.7.1
-- Ruby on Rails 6.0.3.4
+- Ruby on Rails 7.0.2.1
 - Rspec
 - JWT
 - Heroku
@@ -37,7 +37,7 @@ To get a local copy up and running follow these simple example steps.
 - [Node](https://nodejs.org/en/)
 - [NPM](https://www.npmjs.com/get-npm)
 - Ruby v2.7.1
-- Ruby on Rails v6
+- Ruby on Rails v7
 - Postgresql v >= 9.5
 
 ## Project Setup
