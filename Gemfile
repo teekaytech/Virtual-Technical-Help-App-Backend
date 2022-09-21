@@ -32,8 +32,9 @@ gem 'rubocop', '~>0.81.0'
 # gem 'carrierwave'
 # gem 'cloudinary'
 
-# net-http is not in the core, so we need to include it to avoid the warning: already initialized constant NET::ProtocRetryError
-gem "net-http"
+# net-http is not in the core, so we need to include it to avoid the warning:
+# already initialized constant NET::ProtocRetryError
+gem 'net-http'
 
 group :development, :test do
   gem 'dotenv-rails', require: 'dotenv/rails-now'
